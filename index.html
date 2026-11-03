@@ -1,0 +1,1103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiveOnAero | Retro Gaming Podcast</title>
+
+<style>
+
+/* =====================================
+   WINDOWS XP DESKTOP THEME
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.12)),
+        url("images/BETTER BG.jpg") center center / cover fixed;
+    min-height: 100vh;
+    padding-bottom: 48px;
+    color: #222;
+}
+
+/* DESKTOP ICONS */
+
+.desktop-icons {
+    position: fixed;
+    top: 18px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    z-index: 1;
+}
+
+.desktop-icon {
+    width: 75px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.desktop-icon span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+/* MAIN PAGE */
+
+.desktop {
+    max-width: 1120px;
+    margin: 30px auto 60px;
+    padding: 20px;
+}
+
+/* WINDOWS */
+
+.window {
+    background: #ece9d8;
+    border: 1px solid #003c9b;
+    border-radius: 8px 8px 3px 3px;
+    margin-bottom: 28px;
+    box-shadow: 4px 5px 12px rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+.title-bar {
+    background: linear-gradient(
+        to bottom,
+        #3985e8 0%,
+        #1764cf 10%,
+        #1254bd 50%,
+        #0b3f9d 100%
+    );
+    color: white;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px #00306c;
+}
+
+.title-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.window-controls button {
+    width: 22px;
+    height: 21px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(#77b9f7, #1762c8);
+    cursor: pointer;
+    line-height: 16px;
+}
+
+.window-controls button:hover {
+    background: #e89b35;
+}
+
+.window-content {
+    padding: 25px;
+}
+
+.window-content.collapsed {
+    display: none;
+}
+
+/* MENU BAR */
+
+.menu-bar {
+    background: #ece9d8;
+    border-bottom: 1px solid #b5b5a8;
+    padding: 7px 12px;
+    display: flex;
+    gap: 22px;
+    font-size: 12px;
+}
+
+.menu-bar a {
+    color: #222;
+    text-decoration: none;
+}
+
+.menu-bar a:hover {
+    color: #0754c9;
+    text-decoration: underline;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 370px;
+    background:
+        linear-gradient(rgba(0,20,60,.35), rgba(0,20,60,.55)),
+        url("images/hero.jpg") center / cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 65px);
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 5px #000;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-top: 12px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: #e8e8e8;
+    color: #174e9b;
+    padding: 7px 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.xp-button {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 10px 22px;
+    background: linear-gradient(#78bafa, #1766c7);
+    border: 1px solid #06418d;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: inset 1px 1px 2px white;
+}
+
+.xp-button:hover {
+    background: linear-gradient(#9bcfff, #277be0);
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    color: #0645a0;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* STREAMING SOON */
+
+
+
+.stream-box {
+    background: linear-gradient(135deg, #dcecff, #ffffff);
+    border: 2px solid #7ca9df;
+    padding: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.stream-box h2 {
+    font-size: 30px;
+    color: #0751ad;
+    margin-bottom: 10px;
+}
+
+.stream-box p {
+    font-size: 14px;
+}
+
+/* CREW */
+
+.crew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.crew-card {
+    background: #fff;
+    border: 1px solid #aaa;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.15);
+}
+
+.crew-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border: 2px solid #d0d0d0;
+}
+
+.crew-card h3 {
+    color: #0751ad;
+    margin: 12px 0 5px;
+    font-size: 16px;
+}
+
+.crew-card p {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.crew-card a {
+    color: #0751ad;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.crew-card a:hover {
+    text-decoration: underline;
+}
+
+/* STORY */
+
+.story-box {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 22px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* INTERFACE */
+
+.interface-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.interface-layout img {
+    width: 100%;
+    border: 3px solid white;
+    outline: 1px solid #aaa;
+}
+
+.interface-description {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* GADGETS */
+
+.gadget-box {
+    background: white;
+    border: 1px solid #aaa;
+    padding: 22px;
+}
+
+.gadget-box ul {
+    padding-left: 22px;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid white;
+    outline: 1px solid #aaa;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+    transition: transform .2s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04);
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    padding: 20px;
+    font-size: 12px;
+}
+
+/* WINDOWS XP TASKBAR */
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(
+        to bottom,
+        #3b91e8,
+        #1762c6 45%,
+        #0846a3
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    z-index: 100;
+    border-top: 2px solid #78b9f7;
+    box-shadow: 0 -2px 5px rgba(0,0,0,.25);
+}
+
+.start-button {
+    background: linear-gradient(#75c65b, #278c20);
+    color: white;
+    border: 1px solid #236b17;
+    border-radius: 0 12px 12px 0;
+    padding: 7px 18px 7px 12px;
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+    text-shadow: 1px 1px 2px #174c0d;
+    cursor: pointer;
+}
+
+.taskbar-label {
+    color: white;
+    font-size: 12px;
+    margin-left: 12px;
+    flex: 1;
+}
+
+.clock {
+    color: white;
+    background: #1260b8;
+    border-left: 1px solid #7db7f4;
+    padding: 12px;
+    font-size: 12px;
+}
+
+/* START MENU */
+
+.start-menu {
+    display: none;
+    position: fixed;
+    bottom: 42px;
+    left: 5px;
+    width: 260px;
+    background: #ece9d8;
+    border: 2px solid #1764c7;
+    border-radius: 7px 7px 0 0;
+    z-index: 101;
+    box-shadow: 4px 0 10px rgba(0,0,0,.3);
+}
+
+.start-menu.show {
+    display: block;
+}
+
+.start-menu-header {
+    background: linear-gradient(#3985e8, #1254bd);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.start-menu a {
+    display: block;
+    padding: 12px 15px;
+    color: #222;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.start-menu a:hover {
+    background: #316ac5;
+    color: white;
+}
+
+.start-menu-footer {
+    background: #d5d2c5;
+    padding: 10px;
+    text-align: right;
+    font-size: 11px;
+}
+
+/* MOBILE SUPPORT */
+
+@media (max-width: 700px) {
+
+    .desktop-icons {
+        display: none;
+    }
+
+    .desktop {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .window-content {
+        padding: 16px;
+    }
+
+    .crew-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .interface-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .crew-card img {
+        height: 145px;
+    }
+
+    .gallery-grid img {
+        height: 130px;
+    }
+
+    .menu-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .taskbar-label {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .crew-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blinking-text {
+    animation: blink 0.8s infinite !important;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- DESKTOP ICONS -->
+
+<div class="desktop-icons">
+    <div class="desktop-icon">
+        <span>💻</span>
+        My Computer
+    </div>
+    <div class="desktop-icon">
+        <span>🌐</span>
+        Internet
+    </div>
+    <div class="desktop-icon">
+        <span>🎮</span>
+        Games
+    </div>
+    <div class="desktop-icon">
+        <span>🗑️</span>
+        Recycle Bin
+    </div>
+</div>
+
+
+<main class="desktop">
+
+<!-- =====================================
+     HOME / HERO
+===================================== -->
+
+<div class="window" id="home">
+
+    <div class="title-bar">
+        <div class="title-name">
+            💻 LiveOnAero - Welcome
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+           
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <a href="#home">File</a>
+        <a href="#crew">Edit</a>
+        <a href="#story">View</a>
+        <a href="#gallery">Help</a>
+    </div>
+
+    <div class="window-content" style="padding:0;">
+
+        <section class="hero">
+            <div>
+                <div class="hero-tag">
+                    WELCOME TO THE CLUB!
+                </div>
+
+                <h1>LIVEONAERO</h1>
+
+                <p>A Gaming Podcast. filled with idiots.</p>
+
+                <a href="#crew" class="xp-button">
+                    ENTER DESKTOP
+                </a>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+<!-- =====================================
+     STREAMING SOON
+===================================== -->
+
+<div class="window" id="announcement">
+
+    <div class="title-bar">
+        <div class="title-name">
+            📢 Announcement
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+            
+        </div>
+    </div>
+
+    <div class="window-content">
+
+        <div class="stream-box">
+            <h1 class="blinking-text">📡 STREAMING SOON!</h1>
+
+            <p>
+                Something exciting is loading...
+                Stay tuned for our upcoming gaming podcast!
+            </p>
+
+            <p style="margin-top:12px; color:#0751ad; font-weight:bold;">
+                Status: Preparing to connect...
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =====================================
+     MEET THE CREW
+===================================== -->
+
+<div class="window" id="crew">
+
+    <div class="title-bar">
+        <div class="title-name">
+            👥 Meet The Crew
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+            
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#interface">Interface</a>
+    </div>
+
+    <div class="window-content">
+
+        <h2 class="section-heading">Meet The Crew</h2>
+
+        <p class="section-subtitle">
+            The people behind LiveOnAero.
+        </p>
+
+        <div class="crew-grid">
+
+            <div class="crew-card">
+                <img src="images/Is a bel a.png" alt="Isabella">
+                <h3>Isabella</h3>
+                <p>“Me and my thousands of different aesthetics against the world °❀⋆.ೃ࿔*:･”</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+            <div class="crew-card">
+                <img src="images/Groupmate2.jpg" alt="Hayven">
+                <h3>Hayven</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+            <div class="crew-card">
+                <img src="images/SWEET DREAMS.png" alt="Sealtiel">
+                <h3>Sealtiel</h3>
+                <p>"I like dudes and such."</p>
+                <a href="https://www.instagram.com/sealtimes/" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+            <div class="crew-card">
+                <img src="images/Groupmate 4.jpg" alt="Johann">
+                <h3>Johann</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+            <div class="crew-card">
+                <img src="images/Groupmate 5.jpg" alt="Janelle">
+                <h3>Janelle</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+            <div class="crew-card">
+                <img src="images/Groupmate 6.jpg" alt="Elizer">
+                <h3>Elizer</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+             <div class="crew-card">
+                <img src="images/Groupmate 7.jpg" alt="Yohan">
+                <h3>Yohan</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+             <div class="crew-card">
+                <img src="images/Groupmate 8.jpg" alt="Princess Cydel">
+                <h3>Princess Cydel</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+             <div class="crew-card">
+                <img src="images/Groupmate 9.jpg" alt="Elianah">
+                <h3>Elianah</h3>
+                <p>---</p>
+                <a href="#" target="_blank">Social Media Profile ↗</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================
+     OUR STORY
+===================================== -->
+
+<div class="window" id="story">
+
+    <div class="title-bar">
+        <div class="title-name">
+            📝 How Did We Get Here? - Notepad
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+           
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <a href="#story">File</a>
+        <a href="#story">Edit</a>
+        <a href="#interface">Format</a>
+        <a href="#gallery">Help</a>
+    </div>
+
+    <div class="window-content">
+
+        <h2 class="section-heading">How Did We Get Here?</h2>
+
+        <p class="section-subtitle">
+            Every great idea starts somewhere.
+        </p>
+
+        <div class="story-box">
+
+            <p>
+                We started off as a bunch of bumbling idiots, and well, that hasn't changed one bit.
+                 It's just that now, we're just some bumbling idiots with that have streaming set ups!  
+            </p>
+
+            <br>
+
+            <p>
+               Several ideas were thrown at the wall when we were deciding what we wanted to stream, but eventually we all agreed on
+               having us stream ourselves play. But then the next question was, what game to play? More idea were thrown at the wall
+               and this time it landed on as of now, a very controversial  
+            </p>
+
+            <br>
+
+            <p>
+                That game being Roblox.
+            </p>
+
+            <br>
+
+            <p>
+                But aside from that, we also needed to decide who'd be streaming! Sealtiel. They decided it'd be best for Sealtiel to do it.
+                Yay.
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =====================================
+     INTERFACE
+===================================== -->
+
+<div class="window" id="interface">
+
+    <div class="title-bar">
+        <div class="title-name">
+            🎥 The Interface We Envisioned
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+           
+        </div>
+    </div>
+
+    <div class="window-content">
+
+        <h2 class="section-heading">
+            The Interface We Envisioned
+        </h2>
+
+        <p class="section-subtitle">
+            A glimpse of our ideal streaming setup.
+        </p>
+
+        <div class="interface-layout">
+
+            <img src="images/I hat e this.jpg"
+                 alt="Our envisioned streaming interface">
+
+            <div class="interface-description">
+
+                <p>
+                    We wanted our streaming interface to have a the theme of a bygone era. A time much more simplier,
+                    a time where a certain tune would play whenever you start up your computer, a time before any of us were born! 
+
+
+                </p>
+
+                <br>
+
+                <p> The asthetic that we went with is Frutiger Aero. From what Wikipedia, The Free Encyclopedia says: 
+                    "is a design style that was prevalent from the mid-2000s to the early 2010s." 
+                </p>
+
+                <br>
+
+                <p> We wanted to use Frutiger Aero because of it's unique style. The bright images and colorful designs often bring out
+                    a sense of wonder and whimsy. Of a time where computers where someting new and exciting. 
+
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =====================================
+     GADGET SPECIFICATIONS
+===================================== -->
+
+<div class="window" id="gadgets">
+
+    <div class="title-bar">
+        <div class="title-name">
+            ⚙️ System Properties - Gadget Specifications
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+            
+        </div>
+    </div>
+
+    <div class="window-content">
+
+        <h2 class="section-heading">
+            Gadget Specifications
+        </h2>
+
+        <p class="section-subtitle">
+            The equipment that powers LiveOnAero.
+        </p>
+
+        <div class="gadget-box">
+
+            <ul>
+                <li><strong>Processor:</strong> AMD Ryzen 7 7700X 8-Core Processor</li>
+                <li><strong>Motherboard:</strong> B650M GAMING X AX</li>
+                <li><strong>Graphics Card:</strong> NVIDIA GeForce RTX 5060</li>
+                <li><strong>RAM:</strong> 16GB DDR5</li>
+                <li><strong>Storage:</strong> 1TB</li>
+                <li><strong>Monitor:</strong> AOPEN 27SA3 G0 And The ViewPlus MH-20</li>
+                <li><strong>Microphone:</strong> Maono PD400X</li>
+                <li><strong>Headset:</strong> AULA S608 Wired Gming Headset</li>
+                <li><strong>Camera:</strong> Rapoo Camera</li>
+                <li><strong>Internet Connection:</strong> Globe At Home</li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =====================================
+     GALLERY
+===================================== -->
+
+<div class="window" id="gallery">
+
+    <div class="title-bar">
+        <div class="title-name">
+            🖼️ Picture Viewer - Gallery
+        </div>
+
+        <div class="window-controls">
+            <button onclick="minimizeWindow(this)">_</button>
+            <button onclick="maximizeWindow(this)">□</button>
+            
+        </div>
+    </div>
+
+    <div class="window-content">
+
+        <h2 class="section-heading">Gallery</h2>
+
+        <p class="section-subtitle">
+            Moments, memories, and behind-the-scenes.
+        </p>
+
+        <div class="gallery-grid">
+
+            <img src="images/LIVE ON AEROINH IT LOGO.png" alt="LiveOnAero Gallery 1">
+            <img src="images/download (1).jpg" alt="LiveOnAero Gallery 2">
+            <img src="images/gallery3.jpg" alt="LiveOnAero Gallery 3">
+            <img src="images/gallery4.jpg" alt="LiveOnAero Gallery 4">
+            <img src="images/gallery5.jpg" alt="LiveOnAero Gallery 5">
+            <img src="images/gallery6.jpg" alt="LiveOnAero Gallery 6">
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+    <p>© 2026 LiveOnAero | All Rights Reserved</p>
+    <p>Good Luck, Have fun!</p>
+</div>
+
+</main>
+
+
+<!-- =====================================
+     WINDOWS XP START MENU
+===================================== -->
+
+<div class="start-menu" id="startMenu">
+
+    <div class="start-menu-header">
+        💻 LiveOnAero
+    </div>
+
+    <a href="#home" onclick="toggleStartMenu()">🏠 Home</a>
+    <a href="#crew" onclick="toggleStartMenu()">👥 Meet The Crew</a>
+    <a href="#story" onclick="toggleStartMenu()">📝 Our Story</a>
+    <a href="#interface" onclick="toggleStartMenu()">🎥 Interface</a>
+    <a href="#gadgets" onclick="toggleStartMenu()">⚙️ Gadgets</a>
+    <a href="#gallery" onclick="toggleStartMenu()">🖼️ Gallery</a>
+
+    <div class="start-menu-footer">
+        LiveOnAero Desktop
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     TASKBAR
+===================================== -->
+
+<div class="taskbar">
+
+    <button class="start-button" onclick="toggleStartMenu()">
+        🪟 start
+    </button>
+
+    <div class="taskbar-label">
+        💻 LiveOnAero
+    </div>
+
+    <div class="clock" id="clock">
+        12:00 PM
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+// START MENU
+
+function toggleStartMenu() {
+    document.getElementById("startMenu").classList.toggle("show");
+}
+
+// CLOSE START MENU WHEN CLICKING OUTSIDE
+
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("startMenu");
+    const startButton = document.querySelector(".start-button");
+
+    if (!menu.contains(event.target) &&
+        !startButton.contains(event.target)) {
+        menu.classList.remove("show");
+    }
+});
+
+// MINIMIZE WINDOW
+
+function minimizeWindow(button) {
+    const windowBox = button.closest(".window");
+    const content = windowBox.querySelector(".window-content");
+    const menu = windowBox.querySelector(".menu-bar");
+
+    content.classList.toggle("collapsed");
+
+    if (menu) {
+        menu.style.display =
+            content.classList.contains("collapsed") ? "none" : "flex";
+    }
+}
+
+// CLOSE WINDOW CONTENT
+
+function closeWindow(button) {
+    const windowBox = button.closest(".window");
+    windowBox.style.display = "none";
+}
+
+// MAXIMIZE / RESTORE WINDOW
+
+function maximizeWindow(button) {
+    const windowBox = button.closest(".window");
+
+    if (windowBox.dataset.maximized === "true") {
+        windowBox.style.width = "";
+        windowBox.style.marginLeft = "";
+        windowBox.style.marginRight = "";
+        windowBox.dataset.maximized = "false";
+    } else {
+        windowBox.style.width = "100%";
+        windowBox.style.marginLeft = "0";
+        windowBox.style.marginRight = "0";
+        windowBox.dataset.maximized = "true";
+    }
+}
+
+// LIVE CLOCK
+
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+</script>
+
+</body>
+</html>
